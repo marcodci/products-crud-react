@@ -6,6 +6,7 @@ import Product from "./routes/Product.jsx";
 import AddProduct from "./routes/AddProduct.jsx";
 import EditProduct from "./components/EditProduct.jsx";
 import DeleteProduct from "./routes/DeleteProduct.jsx";
+import NotFound from "./routes/NotFound.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="new-product" element={<AddProduct />} />
           <Route path="product/edit/:productId" element={<EditProduct />} />
           <Route path="product/delete/:productId" element={<DeleteProduct />} />
+          <Route path="404-not-found" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

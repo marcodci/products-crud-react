@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom"; // Import useParams
-
+import { useNavigate } from "react-router-dom";
 import "./Product.css";
 const Product = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const { productId } = useParams(); // Corrected to match the route parameter name in App component
+  const [error, setError] = useState(null);
   console.log(productId);
   useEffect(() => {
     const fetchPost = async () => {
@@ -17,11 +19,16 @@ const Product = () => {
         setProduct(response.data);
       } catch (error) {
         console.error("Error fetching post:", error);
+        setError(error);
       }
     };
 
     fetchPost();
   }, [productId]); // Include postId in the dependency array to re-fetch if the postId changes
+
+  if (error) {
+    navigate("/404-not-found");
+  }
 
   if (!product) {
     return <div>Loading...</div>;
