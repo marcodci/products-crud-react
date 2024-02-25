@@ -16,7 +16,7 @@ const AddProduct = () => {
     setSubmitting(true);
 
     try {
-      await axios.post(`${renderBaseUrl}api/products`, {
+      await axios.post(`${renderBaseUrl}/api/products`, {
         name,
         category,
       });
