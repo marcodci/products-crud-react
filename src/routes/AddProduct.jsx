@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./AddProduct.css";
 import { useNavigate } from "react-router-dom";
+import { renderBaseUrl, localBaseUrl } from "../baseurl.js";
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const AddProduct = () => {
     setSubmitting(true);
 
     try {
-      await axios.post("http://localhost:5555/api/products", {
+      await axios.post(`${renderBaseUrl}api/products`, {
         name,
         category,
       });

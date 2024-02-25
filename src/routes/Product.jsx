@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom"; // Import useParams
 import { useNavigate } from "react-router-dom";
 import "./Product.css";
+import { renderBaseUrl, localBaseUrl } from "../baseurl.js";
 const Product = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
@@ -14,7 +15,7 @@ const Product = () => {
       try {
         // Use the postId from the URL to fetch the specific post
         const response = await axios.get(
-          `http://localhost:5555/api/product/${productId}`
+          `${renderBaseUrl}/api/product/${productId}`
         );
         setProduct(response.data);
       } catch (error) {

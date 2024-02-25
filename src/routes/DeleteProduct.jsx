@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./DeleteProduct.css"; // Make sure to create this CSS file
+import { renderBaseUrl, localBaseUrl } from "../baseurl.js";
 const DeleteProduct = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const DeleteProduct = () => {
     const fetchPost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5555/api/product/${productId}`
+          `${renderBaseUrl}/api/product/${productId}`
         );
         setProduct(response.data);
         setIsLoading(false);
@@ -27,7 +28,7 @@ const DeleteProduct = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5555/api/product/${productId}`, {});
+      await axios.delete(`${renderBaseUrl}/api/product/${productId}`, {});
       navigate("/products");
     } catch (error) {
       console.error("Error deleting product:", error);

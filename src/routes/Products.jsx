@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Products.css";
-
+import { renderBaseUrl } from "../baseurl.js";
 const Products = () => {
   console.log("RENDER");
   const [products, setProducts] = useState({
@@ -16,7 +16,7 @@ const Products = () => {
       setProducts((prevState) => ({ ...prevState, isLoading: true }));
 
       try {
-        const response = await axios.get(`http://localhost:5555/api/products`);
+        const response = await axios.get(`${renderBaseUrl}/api/products`);
         console.log(response.data);
         setProducts((prev) => ({
           ...prev,
