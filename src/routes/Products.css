@@ -1,0 +1,82 @@
+.postsList {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.postCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px; /* Fixed width for all cards */
+  height: 400px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.postCard h3 {
+  margin: 0;
+  padding: 15px;
+  background-color: #f7f7f7;
+  color: #007bff;
+  border-bottom: 1px solid #ddd;
+}
+
+.postCard p {
+  padding: 0 15px 15px;
+  flex-grow: 1; /* Makes the paragraph element fill available space, pushing the image to a consistent position */
+}
+
+/* Container for the image to control its size */
+.postCardImgContainer {
+  width: 100%; /* Full width of the card */
+  height: 100px; /* Fixed height for the image container */
+  overflow: hidden; /* Hide parts of the image that exceed the container size */
+}
+
+.postCard img {
+  width: 100%; /* Make image fill the container width */
+  height: 100%; /* Make image fill the container height */
+  object-fit: cover; /* Cover the container without losing the aspect ratio */
+  display: block;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff; /* Primary button color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners for the buttons */
+  cursor: pointer;
+  font-weight: bold; /* Make text bold */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.pagination button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.pagination button:disabled {
+  background-color: #cccccc; /* Disabled button color */
+  cursor: not-allowed; /* Change cursor for disabled state */
+  color: #666666; /* Text color for disabled state */
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-weight: bold; /* Make page indicator text bold */
+}

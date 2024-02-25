@@ -1,0 +1,44 @@
+.createPostForm {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .createPostForm div {
+    margin-bottom: 10px;
+  }
+  
+  .createPostForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .createPostForm input[type="text"],
+  .createPostForm textarea,
+  .createPostForm input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .createPostForm textarea {
+    resize: vertical;
+  }
+  
+  .createPostForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .createPostForm button:disabled {
+    background-color: #ccc;
+  }
+  

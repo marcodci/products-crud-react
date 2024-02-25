@@ -1,0 +1,44 @@
+.editPostForm {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .editPostForm div {
+    margin-bottom: 10px;
+  }
+  
+  .editPostForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .editPostForm input[type="text"],
+  .editPostForm textarea,
+  .editPostForm input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .editPostForm textarea {
+    resize: vertical;
+  }
+  
+  .editPostForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .editPostForm button:disabled {
+    background-color: #ccc;
+  }
+  

@@ -1,0 +1,48 @@
+.deletePostCard {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.postDetails {
+  margin-bottom: 20px;
+}
+
+/* Container for buttons to apply flexbox */
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Ensures consistent space between buttons */
+}
+
+.deleteButton, .cancelButton {
+  padding: 10px 20px;
+  margin-right: 20px;
+  width: 100px; /* Ensures buttons have the same width */
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold; /* Makes button text more prominent */
+  transition: background-color 0.2s, transform 0.2s; /* Smooth transitions for interactions */
+}
+
+.deleteButton:hover, .cancelButton:hover {
+  transform: scale(1.05); /* Slight increase in size on hover for better feedback */
+}
+
+.deleteButton {
+  background-color: #ff4d4d;
+  color: white;
+  height: 40px;
+}
+
+.cancelButton {
+  background-color: #cccccc;
+  color: black;
+  height: 40px;
+}
