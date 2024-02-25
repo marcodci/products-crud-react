@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./EditProduct.css";
-
+import { renderBaseUrl, localBaseUrl } from "../baseurl.js";
 const EditProduct = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const EditProduct = () => {
       setIsLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:5555/api/product/${productId}`
+          `${renderBaseUrl}/api/product/${productId}`
         );
         console.log(response.data);
         const { name, category } = response.data;
@@ -41,7 +41,7 @@ const EditProduct = () => {
     formData.append("category", category);
     console.log(name, category);
     try {
-      await axios.put(`http://localhost:5555/api/product/${productId}`, {
+      await axios.put(`${renderBaseUrl}/api/product/${productId}`, {
         name,
         category,
       });
